@@ -1,0 +1,18 @@
+""" process notes
+    refs: 
+        https://www.pluralsight.com/guides/web-scraping-with-scrapy
+        https://const.fr/blog/tech/scrapy-how-to-crawl-pages/
+        https://doc.scrapy.org/en/0.12/intro/tutorial.html
+"""
+
+# setup a project: 
+$ scrapy startproject tesla
+
+# define items to be collected in crawl
+    # make start_urls in spiders/spider_competitors.py read from jsonl
+    
+
+
+
+# run spider
+$ scrapy crawl competitors -o competitors_scrap_result.jsonl -t jsonlines

@@ -1,0 +1,3 @@
+re_parse_page.py: script used to parse autosaur article to retrieve list of manufacturers with URLs for scraping and initial set of metadata
+companies.jsonl: the initial dataset, result of re_parse_page.py
+Stevens-A-paper.pdf: report for first assignment
