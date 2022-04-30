@@ -16,3 +16,5 @@ $ scrapy startproject tesla
 
 # run spider
 $ scrapy crawl competitors -o competitors_scrap_result.jsonl -t jsonlines
+
+# use pgadmin?  watch lecture 11min in
