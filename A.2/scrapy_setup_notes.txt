@@ -14,7 +14,9 @@ $ scrapy startproject tesla
 
 
 
-# run spider
-$ scrapy crawl competitors -o competitors_scrap_result.jsonl -t jsonlines
+# run competitor spider
+scrapy crawl competitors -o data_out/competitors_scrap_result_2deep.jsonl -t jsonlines
+# run wiki spider
+scrapy crawl wikip -o data_out/wikip_scrape_result.jsonl -t jsonlines
 
 # use pgadmin?  watch lecture 11min in

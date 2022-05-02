@@ -11,8 +11,19 @@ class TeslaItem(Item):
     # name = scrapy.Field()
     url = Field()
     name = Field()
+    tags = Field()
+    entities = Field()
+    parent = Field()
+    title = Field()
+    body = Field()
+
+class WikiItem(Item):
+    url = Field()
+    name = Field()
+    tags = Field()
+    entities = Field()
+    parent = Field()
     title = Field()
     body = Field()
     keywords = Field()
-    content = Field()
-
+    text = Field()
