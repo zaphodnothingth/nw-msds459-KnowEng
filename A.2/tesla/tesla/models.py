@@ -1,3 +1,5 @@
+# ref: https://www.jitsejan.com/scraping-with-scrapy-and-postgres
+
 from sqlalchemy import Column, Integer, String, create_engine
 from sqlalchemy.engine.base import Engine
 from sqlalchemy.engine.url import URL
