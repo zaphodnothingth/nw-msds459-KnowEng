@@ -6,6 +6,7 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+import os
 
 BOT_NAME = 'tesla'
 
@@ -64,6 +65,8 @@ ROBOTSTXT_OBEY = True
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'tesla.pipelines.TeslaTextPipeline': 300,
+   'tesla.pipelines.WikiPipeline':300,
+   'tesla.pipelines.pgPipeline':400
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -88,3 +91,13 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 DEPTH_LIMIT=2
+
+DATABASE = {
+    "drivername": "postgres",
+    "host": os.environ["POSTGRES_HOST"],
+    "port": os.environ["POSTGRES_PORT"],
+    "username": os.environ["POSTGRES_USER"],
+    "password": os.environ["POSTGRES_PASS"],
+    "database": os.environ["POSTGRES_DB"],
+}
+LOG_LEVEL = "INFO"

@@ -1,3 +1,5 @@
+# ref: https://www.jitsejan.com/scraping-with-scrapy-and-postgres
+
 import scrapy
 from scrapy.linkextractors import LinkExtractor
 from bs4 import BeautifulSoup
