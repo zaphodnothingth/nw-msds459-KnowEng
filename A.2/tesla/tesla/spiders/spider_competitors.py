@@ -32,7 +32,8 @@ class TeslaSpider(scrapy.Spider):
     name = "competitors"
     custom_settings = {
         'ITEM_PIPELINES': {
-            'tesla.pipelines.TeslaTextPipeline': 400
+            'tesla.pipelines.TeslaTextPipeline': 300,
+            'tesla.pipelines.pgPipeline': 400
         }
         }
     # allowed_domains = ["deloitte.com"]

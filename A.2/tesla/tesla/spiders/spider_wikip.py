@@ -1,5 +1,3 @@
-# ref: https://www.jitsejan.com/scraping-with-scrapy-and-postgres
-
 import scrapy
 from scrapy.linkextractors import LinkExtractor
 from bs4 import BeautifulSoup
@@ -32,7 +30,8 @@ class TeslaSpider(scrapy.Spider):
     name = "wikip"
     custom_settings = {
         'ITEM_PIPELINES': {
-            'tesla.pipelines.WikiPipeline': 400
+            'tesla.pipelines.WikiPipeline': 300,
+            'tesla.pipelines.pgPipeline': 400
         },
         'DEPTH_LIMIT':1
         }

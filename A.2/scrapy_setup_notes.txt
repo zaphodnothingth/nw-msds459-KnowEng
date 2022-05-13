@@ -3,6 +3,8 @@
         https://www.pluralsight.com/guides/web-scraping-with-scrapy
         https://const.fr/blog/tech/scrapy-how-to-crawl-pages/
         https://doc.scrapy.org/en/0.12/intro/tutorial.html
+        https://www.jitsejan.com/scraping-with-scrapy-and-postgres
+
 """
 
 # setup a project: 

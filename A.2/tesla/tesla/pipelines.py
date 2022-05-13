@@ -97,10 +97,10 @@ class pgPipeline:
         instance = session.query(Items).filter_by(**item).one_or_none()
         if instance:
             return instance
-        zelda_item = Items(**item)
+        out_item = Items(**item)
 
         try:
-            session.add(zelda_item)
+            session.add(out_item)
             session.commit()
         except:
             session.rollback()

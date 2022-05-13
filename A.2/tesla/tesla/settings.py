@@ -6,7 +6,11 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-import os
+from importlib.util import spec_from_loader, module_from_spec
+from importlib.machinery import SourceFileLoader 
+spec = spec_from_loader(".creds", SourceFileLoader(".creds", "./.creds"))
+creds = module_from_spec(spec)
+spec.loader.exec_module(creds)
 
 BOT_NAME = 'tesla'
 
@@ -94,10 +98,10 @@ DEPTH_LIMIT=2
 
 DATABASE = {
     "drivername": "postgres",
-    "host": os.environ["POSTGRES_HOST"],
-    "port": os.environ["POSTGRES_PORT"],
-    "username": os.environ["POSTGRES_USER"],
-    "password": os.environ["POSTGRES_PASS"],
-    "database": os.environ["POSTGRES_DB"],
+    "host": "192.46.216.236",
+    "port": "5432",
+    "username": "stevensa",
+    "password": creds.password,
+    "database": "stevensa",
 }
 LOG_LEVEL = "INFO"
