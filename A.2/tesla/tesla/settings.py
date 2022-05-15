@@ -97,7 +97,7 @@ ITEM_PIPELINES = {
 DEPTH_LIMIT=2
 
 DATABASE = {
-    "drivername": "postgres",
+    "drivername": "postgresql",
     "host": "192.46.216.236",
     "port": "5432",
     "username": "stevensa",
