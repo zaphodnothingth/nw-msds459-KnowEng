@@ -8,6 +8,7 @@ import re
 # local
 from tesla.items import WikiItem
 
+crawl_set = []
 
 ### Functions for parsing body
 def tag_visible(element):
@@ -47,7 +48,9 @@ class TeslaSpider(scrapy.Spider):
         urls = [link.url for link in links]
         for url in urls:
             child = scrapy.Request(url, callback = self.parse_dir_contents, meta={'parent':response.url})
-            yield child
+            if url not in crawl_set:
+                crawl_set.append(url)
+                yield child
 
     def parse_dir_contents(self, response):
         
@@ -55,7 +58,7 @@ class TeslaSpider(scrapy.Spider):
 
         item['url'] = response.url
         item['name'] = ''.join(response.selector.xpath('./td/a/text()').extract())
-        item['title'] = response.css('h1::text').extract_first() 
+        item['title'] = str(response.css('h1::text').extract_first() )
         item['parent'] = response.meta['parent']
         item['text'] = response.xpath('//div[@id="mw-content-text"]//text()')\
             .extract()                      

@@ -56,14 +56,14 @@ class TeslaTextPipeline:
         item['title'] = [line for line in item['title'] if line not in whitespace]
         item['title'] = ' '.join(item['title'])
         # gen tags from url
-        item['tags'] = url_tags(item['url'])
+        item['tags'] = str(url_tags(item['url']))
         # clean body whitespace
         item['body'] = ' '.join(item['body'].split())
         # extract entities from body
         entities = []
         entities.extend(ent_extr(item['title']))
         entities.extend(ent_extr(item['body']))
-        item['entities'] = entities
+        item['entities'] = str(entities)
         return item
 
 
@@ -75,7 +75,8 @@ class WikiPipeline(object):
         entities = []
         entities.extend(ent_extr(item['title']))
         entities.extend(ent_extr(item['text']))
-        item['entities'] = entities
+        item['entities'] = str(entities)
+        item['title'] = ''
         return item
 
 

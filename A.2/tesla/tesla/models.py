@@ -30,7 +30,19 @@ class Items(DeclarativeBase):
     Defines the items model
     """
 
-    __tablename__ = "items"
+    # __tablename__ = "items"
 
-    name = Column("name", String, primary_key=True)
-    price = Column("price", Integer)
+    # name = Column("name", String, primary_key=True)
+    # price = Column("price", Integer)
+
+    __tablename__ = "wikip"
+    
+    url = Column("url", String, primary_key=True)
+    name = Column("name", String)
+    tags = Column("tags", String)
+    entities = Column("entities", String)
+    parent = Column("parent", String)
+    title = Column("title", String)
+    body = Column("body", String)
+    keywords = Column("keywords", String)
+    text = Column("text", String)
