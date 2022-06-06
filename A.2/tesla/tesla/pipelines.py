@@ -10,17 +10,15 @@
 
 
 import re
+from string import whitespace
 import nltk
 import spacy
 # python -m spacy download en_core_web_sm
 nlp = spacy.load('en_core_web_sm')
 from sqlalchemy.orm import sessionmaker
-from tesla.models import Items, create_items_table, db_connect
-
-
 # local
+from tesla.models import Items, create_items_table, db_connect
 # from tesla.items import WikiItem  # item class 
-from string import whitespace
 
 
 def remove_stopwords(tokens):
